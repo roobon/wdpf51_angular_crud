@@ -6,7 +6,7 @@
 </ul>
 <h2>User Entry</h2>
 <form #f="ngForm">
-    <input type="text" name="user" placeholder="Enter User" [(ngModel)]="selectedUser.name">
+    <input type="text" name="name" placeholder="Enter User" [(ngModel)]="selectedUser.name">
     <input type="text" name="email" placeholder="Enter User" [(ngModel)]="selectedUser.email">
     <input type="text" name="password" placeholder="Enter User" [(ngModel)]="selectedUser.password">
     <input type="button" (click)="userCreate(f)" value="Create New User" >

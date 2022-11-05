@@ -5,7 +5,7 @@ if(isset($postdata) && !empty($postdata))
 {
 	$request = json_decode($postdata,true);
 	// Validate.
-	if(trim($request['name']) === '' || trim($request['email']) ==='')
+	if(trim($request['name']) == '' || trim($request['email']) =='')
 	{
 		return http_response_code(400);
 	}

@@ -9,7 +9,7 @@ import { User} from '../user';
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];  
-  selectedUser: User = { id : null , name: null, email: null, password: null}
+  selectedUser: User = { id : null , name: null, email: null, password: null};
   constructor(private userService: UsersService) {
     this.userService.readUsers().subscribe((users: User[])=>{
       this.users = users;
