@@ -1,4 +1,11 @@
-<p>User List</p>
+<div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">User Management System</h1>
+      <hr class="my-2" />
+    </div>
+</div>
+<div class="container">
+<h2>User List</h2>
 <ul>
     <li *ngFor="let user of users">
         ID: {{user.id}} Name: {{user.name}}
@@ -6,8 +13,9 @@
 </ul>
 <h2>User Entry</h2>
 <form #f="ngForm">
-    <input type="text" name="name" placeholder="Enter User" [(ngModel)]="selectedUser.name">
-    <input type="text" name="email" placeholder="Enter User" [(ngModel)]="selectedUser.email">
-    <input type="text" name="password" placeholder="Enter User" [(ngModel)]="selectedUser.password">
+    <input type="text" name="name" class="" placeholder="Enter User" [(ngModel)]="selectedUser.name">
+    <input type="text" name="email" placeholder="Enter Email" [(ngModel)]="selectedUser.email">
+    <input type="text" name="password" placeholder="Enter Password" [(ngModel)]="selectedUser.password">
     <input type="button" (click)="userCreate(f)" value="Create New User" >
 </form>
+</div>
