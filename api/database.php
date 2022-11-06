@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 define('HOST', 'localhost');
 define('USER', 'root');
-define('PASS', '');
+define('PASS', 'mysql');
 define('NAME', 'wdpf51_ang_crud');
 
 $db = new mysqli(HOST ,USER ,PASS ,NAME);
