@@ -6,16 +6,31 @@
 </div>
 <div class="container">
 <h2>User List</h2>
-<ul>
-    <li *ngFor="let user of users">
-        ID: {{user.id}} Name: {{user.name}}
-    </li>
-</ul>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="selectUser(user)">Edit</button>
+            <button type="button" class="btn btn-warning" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+    </tr>
+</table>
+
 <h2>User Entry</h2>
 <form #f="ngForm">
     <input type="text" name="name" class="" placeholder="Enter User" [(ngModel)]="selectedUser.name">
     <input type="text" name="email" placeholder="Enter Email" [(ngModel)]="selectedUser.email">
     <input type="text" name="password" placeholder="Enter Password" [(ngModel)]="selectedUser.password">
-    <input type="button" (click)="userCreate(f)" value="Create New User" >
+    <input *ngIf="selectedUser.id==null" type="button" (click)="userCreate(f)" value="Create New User" >
+    <input *ngIf="selectedUser.id" type="button" (click)="userUpdate(f)"  value="Update User" >
+    <input type="reset" value="RESET">
 </form>
 </div>
