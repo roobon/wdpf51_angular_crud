@@ -8,13 +8,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormValidationComponent implements OnInit {
 
-  mandoForm = new FormGroup({
-    name: new FormControl(),
-    series: new FormControl('The Mandalorian')
+  myForm = new FormGroup({
+    name: new FormControl(''),
+    series: new FormControl('')
   });
-  onFormSubmit(): void {
-    console.log('Name:' + this.mandoForm.get('name').value);
-    console.log('Series:' + this.mandoForm.get('series').value);
+    
+  onFormSubmit(){
+      console.log(this.myForm.value);   
   }
 
   constructor() { }
