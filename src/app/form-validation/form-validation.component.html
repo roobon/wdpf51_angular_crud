@@ -1,6 +1,20 @@
 <p>form-validation works!</p>
-<form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+<form [formGroup]="myForm" (ngSubmit)="onFormSubmit2()">
     Name: <input formControlName="name"  placeholder="Enter Name">
-    Series: <input formControlName="series"  placeholder="Enter Series">
-    <button type="submit">Submit</button> 
+    <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
+        Data is invalid
+    </div>
+    Addrfess: <input formControlName="address"  placeholder="Enter Address">
+    <button *ngIf="myForm.valid" [ngClass] = "'btn-success'" type="submit" [disabled]="myForm.pristine || myForm.invalid" class="btn btn-success">Submit</button> 
 </form>
+
+<!-- <input type="text" [formControl]="name">
+<label *ngIf="name.invalid" [ngClass] = "'error'"> Name is required </label><br>
+<input type="text" [formControl]="age">
+<label *ngIf="age.invalid" [ngClass] = "'error'"> Age is required </label><br>
+<input type="text" [formControl]="college">
+<label *ngIf="college.invalid" [ngClass] = "'error'"> Max length is 15 </label><br>
+<button type="button" (click)="onFormSubmit()" >Send Data</button>
+<div>
+Name: {{ name.value }} and Age: {{age.value }} College: {{college.value }} -->
+<!-- </div> -->

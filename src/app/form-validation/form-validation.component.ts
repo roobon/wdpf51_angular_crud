@@ -8,14 +8,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormValidationComponent implements OnInit {
 
+    name = new FormControl('', Validators.required);
+    age = new FormControl('', Validators.required);
+    college =  new FormControl('', Validators.maxLength(15));
+  
   myForm = new FormGroup({
-    name: new FormControl(''),
-    series: new FormControl('')
+    name: new FormControl('', [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
+    address: new FormControl('')
   });
     
-  onFormSubmit(){
-      console.log(this.myForm.value);   
+  onFormSubmit2(){
+      console.log(this.myForm.value);
+      
   }
+
+//   onFormSubmit(){
+//     console.log(this.name.value);
+//     console.log(this.age.value);  
+//     console.log(this.college.value);   
+// }
+
 
   constructor() { }
 
