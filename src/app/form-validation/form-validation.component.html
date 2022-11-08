@@ -1,10 +1,17 @@
-<p>form-validation works!</p>
-<form [formGroup]="myForm" (ngSubmit)="onFormSubmit2()">
-    Name: <input formControlName="name"  placeholder="Enter Name">
-    <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
-        Data is invalid
+<div class="container">
+    <div class="jumbotron">
+      <h3 class="display-4">Template Driven adn Reactive Form </h3>
+      <hr class="my-2" />
     </div>
-    Addrfess: <input formControlName="address"  placeholder="Enter Address">
+  </div>
+<div class="container">
+<h1>form-validation works!</h1>
+<form [formGroup]="myForm" (ngSubmit)="onFormSubmit2()">
+    Name: <br>     <input formControlName="name"  placeholder="Enter Name">
+    <span *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
+        Data is invalid
+    </span><br>
+    Address: <br><input formControlName="address"  placeholder="Enter Address"><br>
     <button *ngIf="myForm.valid" [ngClass] = "'btn-success'" type="submit" [disabled]="myForm.pristine || myForm.invalid" class="btn btn-success">Submit</button> 
 </form>
 
@@ -18,3 +25,5 @@
 <div>
 Name: {{ name.value }} and Age: {{age.value }} College: {{college.value }} -->
 <!-- </div> -->
+
+</div>
